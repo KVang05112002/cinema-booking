@@ -1,0 +1,88 @@
+@use '../../scss/' as *;
+
+.background-logo {
+    height: 100vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+    }
+}
+
+.form-login {
+    @include flex(center, center);
+    max-width: 400px;
+    margin-left: 35%;
+    margin-right: 10%;
+    margin-top: -400px;
+    position: relative;
+    // border: 1px solid $white;
+    border-radius: $border-radius;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+
+    &__imges {
+        height: 200px;
+        width: 100%;
+        position: relative;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+    }
+
+    h2 {
+        margin-top: 20px;
+        color: $black;
+    }
+
+    &__content {
+        width: 80%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: $txt-color;
+
+        &__username,
+        &__password {
+            h3 {
+                color: $black;
+            }
+        }
+    }
+
+    &__button-login {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    &__signup {
+        color: $black;
+        font-weight: 200;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+
+
+}
